@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/high-contrast.css" id="high-contrast-style" disabled>
+    <style>
+        /* Ocultar el botón de Estilo Normal por defecto */
+        #btn-normal {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Contáctanos</h1>
+        <form id="personal-data-form" class="needs-validation" novalidate>
+            <div class="form-group">
+                <label for="nombre">Nombre:</label>
+                <input type="text" class="form-control" id="nombre" name="nombre" required aria-describedby="nombre_inv">
+                <div class="invalid-feedback" id="nombre_inv">Por favor ingrese su nombre.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" class="form-control" id="email" name="email" required aria-describedby="email_inv">
+                <div class="invalid-feedback" id="email_inv">Por favor ingrese un email válido.</div>
+            </div>
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required aria-describedby="mensaje_inv"></textarea>
+                <div class="invalid-feedback" id="mensaje_inv">Por favor ingrese su mensaje.</div>
+            </div>
+            <button type="submit" class="btn btn-primary">Enviar</button>
+            <button type="button" class="btn btn-secondary" onclick="toggleContrast()">Alto Contraste</button>
+            <button type="button" class="btn btn-secondary" id="btn-normal" onclick="toggleNormal()">Estilo Normal</button>
+        </form>
+    </div>
+    <!-- Enlace a Bootstrap JS y dependencias de jQuery y Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- Enlace al archivo de JavaScript externo -->
+    <script src="./assets/js/valid.js"></script>
+</body>
+</html>
