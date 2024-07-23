@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacto</title>
+    <title>Contacto - AccesWeb</title>
     <!-- Enlace a Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./assets/css/high-contrast.css" id="high-contrast-style" disabled>
     <style>
         /* Ocultar el botón de Estilo Normal por defecto */
@@ -15,29 +16,92 @@
     </style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1>Contáctanos</h1>
-        <form id="personal-data-form" class="needs-validation" novalidate>
-            <div class="form-group">
-                <label for="nombre">Nombre:</label>
-                <input type="text" class="form-control" id="nombre" name="nombre" required aria-describedby="nombre_inv">
-                <div class="invalid-feedback" id="nombre_inv">Por favor ingrese su nombre.</div>
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-center text-md-left">AccesWeb</h1>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <button type="button" class="btn btn-secondary" onclick="toggleContrast()">Alto Contraste</button>
+                    <button type="button" class="btn btn-secondary" id="btn-normal" onclick="toggleNormal()">Estilo Normal</button>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" class="form-control" id="email" name="email" required aria-describedby="email_inv">
-                <div class="invalid-feedback" id="email_inv">Por favor ingrese un email válido.</div>
+        </div>
+    </header>
+
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">AccesWeb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Profile.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="contact.html">Contacto <span class="sr-only">(actual)</span></a>
+                    </li>
+                </ul>
             </div>
-            <div class="form-group">
-                <label for="mensaje">Mensaje:</label>
-                <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required aria-describedby="mensaje_inv"></textarea>
-                <div class="invalid-feedback" id="mensaje_inv">Por favor ingrese su mensaje.</div>
+        </div>
+    </nav>
+
+    <main id="main-content" class="container mt-5">
+        <h1 class="mb-4">Contáctanos</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <p>Para consultas sobre nuestros servicios de auditoría y asesoramiento en accesibilidad web, por favor utiliza el siguiente formulario para ponerte en contacto con nosotros. Te responderemos a la mayor brevedad posible.</p>
+                <form id="personal-data-form" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="nombre" required aria-describedby="nombre_inv" autofocus>
+                        <div class="invalid-feedback" id="nombre_inv">Por favor ingrese su nombre.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" class="form-control" id="email" name="email" required aria-describedby="email_inv">
+                        <div class="invalid-feedback" id="email_inv">Por favor ingrese un email válido.</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="mensaje" rows="4" required aria-describedby="mensaje_inv"></textarea>
+                        <div class="invalid-feedback" id="mensaje_inv">Por favor ingrese su mensaje.</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
             </div>
-            <button type="submit" class="btn btn-primary">Enviar</button>
-            <button type="button" class="btn btn-secondary" onclick="toggleContrast()">Alto Contraste</button>
-            <button type="button" class="btn btn-secondary" id="btn-normal" onclick="toggleNormal()">Estilo Normal</button>
-        </form>
-    </div>
+            <div class="col-md-6">
+                <h2>Información de Contacto</h2>
+                <p><i class="bi bi-geo-alt"></i> Dirección: Colón 123 , Córdoba , Argentina</p>
+                <p><i class="bi bi-telephone"></i> Teléfono: +123 456 7890</p>
+                <p><i class="bi bi-envelope"></i> Email: contacto@accesweb.com</p>
+                <h3>Síguenos en</h3>
+                <div class="d-flex justify-content-start">
+                    <a href="https://www.facebook.com" class="text-dark mr-3" aria-label="Facebook"><i class="bi bi-facebook" style="font-size: 2rem;"></i></a>
+                    <a href="https://www.instagram.com" class="text-dark mr-3" aria-label="Instagram"><i class="bi bi-instagram" style="font-size: 2rem;"></i></a>
+                    <a href="https://www.twitter.com" class="text-dark" aria-label="Twitter"><i class="bi bi-twitter" style="font-size: 2rem;"></i></a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-light py-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>Sitio web creado por David López. Copyright © 2024.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
     <!-- Enlace a Bootstrap JS y dependencias de jQuery y Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
