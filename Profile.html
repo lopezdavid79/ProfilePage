@@ -1,31 +1,141 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Perfil</title>
-  <!-- Bootstrap CSS CDN -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accesibilidad Web - Auditorías y Asesoramiento - Nosotros</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <style>
+        /* Ocultar el botón de Estilo Normal por defecto */
+        #btn-normal {
+            display: none;
+        }
+        
+        /* Estilo para el enlace de salto al contenido principal */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <header class="bg-light py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-center text-md-left">AccesWeb</h1>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <button type="button" class="btn btn-secondary" onclick="toggleContrast()">Alto Contraste</button>
+                    <button type="button" class="btn btn-secondary" id="btn-normal" onclick="toggleNormal()">Estilo Normal</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">AccesWeb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="Profile.html">Nosotros <span class="sr-only">(actual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main id="main-content">
+        <div class="container mt-5">
+            <!-- Historia de la Empresa -->
+            <div class="row mb-4">
+                <div class="col-lg-6">
+                    <img src="https://via.placeholder.com/600x400" class="img-fluid" alt="Imagen de la empresa">
+                </div>
+                <div class="col-lg-6">
+                    <h2>Nuestra Historia</h2>
+                    <p>AccesWeb fue fundada en 2010 con la misión de hacer la web accesible para todos. Desde nuestros inicios, hemos trabajado con empresas de todos los tamaños para ayudarles a cumplir con los estándares de accesibilidad y mejorar la experiencia de usuario para personas con discapacidades.</p>
+                    <p>Nuestro equipo está compuesto por expertos en accesibilidad, desarrolladores web y diseñadores que comparten una pasión por la inclusión digital. A lo largo de los años, hemos expandido nuestros servicios para incluir auditorías de accesibilidad, asesoramiento personalizado y capacitación en accesibilidad.</p>
+                </div>
+            </div>
+            
+            <!-- Perfil del Consultor -->
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <div class="card mb-4">
+                        <img class="card-img-top" src="./assets/img/fotoPerfil_david.jpg" alt="Imagen de perfil">
+                        <div class="card-body">
+                            <h5 class="card-title">David López</h5>
+                            <p class="card-text">Consultor de accesibilidad digital</p>
+                            <a href="https://www.linkedin.com/in/consultor-david-lopez-/" class="btn btn-primary">Visitar LinkedIn</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h3>Acerca de David López</h3>
+                    <p>David López es un consultor de accesibilidad digital con más de 10 años de experiencia en la industria. Ha trabajado con una amplia variedad de clientes para ayudarles a identificar y resolver problemas de accesibilidad en sus sitios web y aplicaciones. David es un apasionado defensor de la inclusión digital y ha dado numerosas charlas y talleres sobre la importancia de la accesibilidad en el diseño web.</p>
+                    <p>En AccesWeb, David lidera nuestro equipo de consultoría y se asegura de que cada proyecto cumpla con los más altos estándares de accesibilidad. Su experiencia y conocimiento son invaluables para nuestros clientes que buscan hacer sus plataformas digitales accesibles para todos.</p>
+                </div>
+            </div>
+        </div>
+    </main>
 
-<div>
-  <h2> Perfil</h2>
-</div>
-  <div class="container mt-5">
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="./assets//img//fotoPerfil_david.jpg" alt="Imagen de perfil">
-    <div class="card-body">
-      <h5 class="card-title">David López</h5>
-      <p class="card-text">Un poco de historia profesional para atender al contenido de la tarjeta.</p>
-      <a href="https://www.linkedin.com/in/consultor-david-lopez-/" class="btn btn-primary">Visitar linkedin</a>
+    <div class="container mt-5">
+        <ul class="list-inline text-center">
+            <li class="list-inline-item"><a href="index.html">Inicio</a></li>
+            <li class="list-inline-item"><a href="Profile.html">Nosotros</a></li>
+            <li class="list-inline-item"><a href="contact.html">Contacto</a></li>
+        </ul>
     </div>
-  </div>
-</div>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div class="container mt-3">
+        <h2 class="text-center">Síguenos en</h2>
+        <div class="row">
+            <div class="col text-center">
+                <a href="https://www.facebook.com" class="text-dark" aria-label="Facebook"><i class="bi bi-facebook" style="font-size: 2rem;"></i></a>
+                <a href="https://www.instagram.com" class="text-dark ml-3" aria-label="Instagram"><i class="bi bi-instagram" style="font-size: 2rem;"></i></a>
+                <a href="https://www.twitter.com" class="text-dark ml-3" aria-label="Twitter"><i class="bi bi-twitter" style="font-size: 2rem;"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="bg-light py-3 mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>Sitio web creado por David López. Copyright © 2024.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Enlace a Bootstrap JS y dependencias de jQuery y Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
