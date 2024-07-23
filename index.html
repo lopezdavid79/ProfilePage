@@ -3,42 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página de perfil</title>
+    <title>Accesibilidad Web - Auditorías y Asesoramiento</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css">
+    <style>
+        /* Ocultar el botón de Estilo Normal por defecto */
+        #btn-normal {
+            display: none;
+        }
+        
+        /* Estilo para el enlace de salto al contenido principal */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: #000;
+            color: #fff;
+            padding: 8px;
+            z-index: 100;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus {
+            top: 0;
+        }
+    </style>
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
     <header class="bg-light py-3">
         <div class="container">
-            <h1 class="text-center">Página de Perfil</h1>
+            <div class="row">
+                <div class="col-md-8">
+                    <h1 class="text-center text-md-left">AccesWeb</h1>
+                </div>
+                <div class="col-md-4 text-center text-md-right">
+                    <button type="button" class="btn btn-secondary" onclick="toggleContrast()">Alto Contraste</button>
+                    <button type="button" class="btn btn-secondary" id="btn-normal" onclick="toggleNormal()">Estilo Normal</button>
+                </div>
+            </div>
         </div>
-        <!-- Barra de Navegación -->
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-        <a class="navbar-brand" href="#">Mi Sitio</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#inicio">Inicio <span class="sr-only">(actual)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="Profile.html">Perfil</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contacto</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
     </header>
-    <main>
-        <!-- Carrusel de Imágenes -->
+    
+    <!-- Barra de Navegación -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">AccesWeb</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Alternar navegación">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#inicio">Inicio <span class="sr-only">(actual)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Profile.html">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main id="main-content">
+        <!-- Sección de Bienvenida -->
         <div id="inicio" class="container mt-5">
-            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+            <div class="jumbotron text-center">
+                <h2 class="display-4">Bienvenido a AccesWeb</h2>
+                <p class="lead">Tu socio en auditorías y asesoramiento en el desarrollo de contenido accesible.</p>
+                <hr class="my-4">
+                <p>Nos especializamos en asegurar que tu contenido web sea accesible para todos. Desde auditorías de accesibilidad hasta asesoramiento personalizado, estamos aquí para ayudarte a cumplir con los estándares de accesibilidad web.</p>
+                <a class="btn btn-primary btn-lg" href="contact.html" role="button">Contáctanos</a>
+            </div>
+        </div>
+
+        <!-- Carrusel de Imágenes -->
+        <div class="container mt-5"   >
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" role="region"aria-label="slide,navegación utilizando los botones siguiente y atrás  ">
                 <ol class="carousel-indicators">
                     <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
@@ -46,13 +91,25 @@
                 </ol>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Primera imagen">
+                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Auditorías de Accesibilidad">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Auditorías de Accesibilidad</h5>
+                            <p>Garantiza que tu sitio web cumpla con todos los estándares de accesibilidad.</p>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Segunda imagen">
+                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Asesoramiento Personalizado">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Asesoramiento Personalizado</h5>
+                            <p>Te ayudamos a implementar las mejores prácticas de accesibilidad web.</p>
+                        </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Tercera imagen">
+                        <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Capacitación en Accesibilidad">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Capacitación en Accesibilidad</h5>
+                            <p>Capacita a tu equipo en el desarrollo de contenido accesible.</p>
+                        </div>
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
@@ -65,14 +122,58 @@
                 </a>
             </div>
         </div>
+
+        <!-- Servicios -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-clipboard-check" style="font-size: 3rem;"></i>
+                    <h3>Auditorías de Accesibilidad</h3>
+                    <p>Garantiza que tu sitio web cumpla con todos los estándares de accesibilidad.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-person-check" style="font-size: 3rem;"></i>
+                    <h3>Asesoramiento Personalizado</h3>
+                    <p>Te ayudamos a implementar las mejores prácticas de accesibilidad web.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <i class="bi bi-people" style="font-size: 3rem;"></i>
+                    <h3>Capacitación en Accesibilidad</h3>
+                    <p>Capacita a tu equipo en el desarrollo de contenido accesible.</p>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <div class="container mt-5" role="navigation">
+        <ul class="list-inline text-center">
+            <li class="list-inline-item"><a href="index.html">Inicio</a></li>
+            <li class="list-inline-item"><a href="Profile.html">Nosotros</a></li>
+            <li class="list-inline-item"><a href="contact.html">Contacto</a></li>
+        </ul>
+    </div>
+
+    <div class="container mt-3" role="region" aria-label="redes sociales" >
+        <h2 class="text-center">Seguinos en</h2>
+        <div class="row">
+            <div class="col text-center">
+                <a href="https://www.facebook.com" class="text-dark" aria-label="Facebook"><i class="bi bi-facebook" style="font-size: 2rem;"></i></a>
+                <a href="https://www.instagram.com" class="text-dark ml-3" aria-label="Instagram"><i class="bi bi-instagram" style="font-size: 2rem;"></i></a>
+                <a href="https://www.twitter.com" class="text-dark ml-3" aria-label="Twitter"><i class="bi bi-twitter" style="font-size: 2rem;"></i></a>
+            </div>
+        </div>
+    </div>
+
     <footer class="bg-light py-3 mt-5">
-        <div class="container text-center">
-            <p>Sitio web creado por David Lopez. Copyright © 2024.</p>
+        <div class="container">
+            <div class="row">
+                <div class="col text-center">
+                    <p>Sitio web creado por David Lopez. Copyright © 2024.</p>
+                </div>
+            </div>
         </div>
     </footer>
-
+    
     <!-- Enlace a Bootstrap JS y dependencias de jQuery y Popper.js -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
